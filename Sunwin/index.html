@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán Tài/Xỉu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Nhập kết quả Tài/Xỉu</h1>
+
+    <label for="resultType">Chọn:</label>
+    <select id="resultType">
+        <option value="Tài">Tài</option>
+        <option value="Xỉu">Xỉu</option>
+    </select>
+
+    <input type="text" id="diceInput" placeholder="Nhập kết quả (VD: 5,6,3)">
+    <button onclick="addResult()">Thêm kết quả</button>
+
+    <h3>Dự đoán: <span id="prediction">Đang chờ...</span></h3>
+    <h3>Xác suất xúc xắc:</h3>
+    <ul id="diceProbability"></ul>
+    <h3>Cầu kèo: <span id="streak">Loạn cầu</span></h3>
+    <h3>Trạng thái cầu: <span id="streakStatus">Loạn cầu</span></h3>
+
+    <script src="script.js"></script>
+</body>
+</html>
