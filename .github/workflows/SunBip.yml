@@ -1,0 +1,32 @@
+name: Setup Sunwin Project
+
+on:
+  push:
+    branches:
+      - main  # Chạy khi có code mới trên nhánh main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Create package.json if not exist
+        run: |
+          cd Sunwin
+          [ -f package.json ] || npm init -y
+
+      - name: Install dependencies
+        run: |
+          cd Sunwin
+          npm install
